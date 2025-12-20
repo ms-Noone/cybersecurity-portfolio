@@ -15,7 +15,6 @@
 + ISTQB Certified Tester, Foundation Level (Completed : Credential ID **MY0076-13**)
 ---
 ## 🤝 Let’s Connect
-I’m always open to learning from others and connecting with cybersecurity professionals!  
 💼 **LinkedIn:** www.linkedin.com/in/nurainmohdaffandi  
 📧 **Email:** ainaffandi@gmail.com  
 
