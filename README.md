@@ -1,4 +1,5 @@
 # 👋 Hi, I'm Ms Noone (Nurain M.Affandi)
+Housewife who diving into cybersecurity to build new skills and opportunities
 ---
 
 ## 🧭 Learning Roadmap
