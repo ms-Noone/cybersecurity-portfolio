@@ -65,8 +65,8 @@ Every device on a networks need a unique identifier (IP Address) to communicate.
 - _ifconfig_ or _ipconfig_ : command to show IP address
 
 ### Flags/Answers:  
-	• Not private : 49.69.147.197
-	• Invalid IP : 192.168.305.19
+	• Not private → 49.69.147.197
+	• Invalid IP → 192.168.305.19
 
 ## 📝 Task 5: UDP & TCP
 UDP & TCP protocol enable processes on networked host to communicate with each other. UDP doesn’t provide mechanism to know that the packet has been delivered while in TCP, each data has a sequence number that make it easy for receiver to identify lost or duplicated packet. In TCP, they will establish the connection between the two device before the data transfer using Three way Handshake.
