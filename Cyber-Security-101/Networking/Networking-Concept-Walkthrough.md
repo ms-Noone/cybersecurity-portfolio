@@ -84,6 +84,7 @@ UDP & TCP protocol enable processes on networked host to communicate with each o
 
 ## 📝 Task 6: Encapsulation
 Encapsulation refers to the process of data been wrapped layer by layer by adding a header ( and sometime a trailer)
+![alt text](https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849061418.svg)
 
 **Key Concepts:**  
 | Layer  | Protocol Data Unit (PDU)  |
