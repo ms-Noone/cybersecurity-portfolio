@@ -39,7 +39,7 @@ ARP (Address Resolution Protocol) maps IP addresses (Layer 3) to MAC addresses (
 **<ins>Command Examples:</ins>**  
 - _arp -a_          # View ARP Cache table
 - _ip neigh show_   # Linux equivalent
-- _arp -s <IP Address> <Mac Address>_ #Manually enter static ARP
+- _arp -s <IP Address> <Mac Address>_  #Manually enter static ARP
 
 ### Flags/Answers:  
 	• Destination MAC Adress used in ARP Request → ff:ff:ff:ff:ff:ff
