@@ -1,4 +1,4 @@
-Networking Essentials – TryHackMe Walkthrough
+# Networking Essentials – TryHackMe Walkthrough
 Date Completed: Dec 29, 2025
 Category: Networking
 Difficulty: Easy
@@ -6,11 +6,11 @@ Estimated Time: ~45 minutes
 Focus Areas: WHOIS, DNS, HTTP and FTP, SMTP, POP3 & IMAP
 Goal: Strengthen understanding of  core TCP/IP protocols.
 
-📝 Introduction
+## 📝 Introduction
 
 This room builds on foundational networking concept by exploring how a protocol operates behind the graphical interfaces. The exercise focus on protocol: DNS, HTTP, FTP, SMTP, POP3, and IMAP reinforcing both theoretical knowledge and practical command usage.
 
-Task 2: DNS – Remembering Addresses
+## Task 2: DNS – Remembering Addresses
 This task reinforced theoretical knowledge through guided questions and quizzes
 
 Key Concepts:
@@ -30,7 +30,7 @@ nslookup <domain_name> #Lookup the IP address of a domain
 Reflection:
 	• DNS simplifies internet use by mapping domains to IPs, but this convenience creates the attack surface. Mastering DNS concepts are vital for detecting anomalies and defending against hijacking or redirection attacks.
 
-Task 3: WHOIS
+## Task 3: WHOIS
 Process:
 	• Ran whois <domain_name> to view records of any registered domain
 	
@@ -40,7 +40,7 @@ Key Concepts:
 Reflection:
 WHOIS reveals ownership and contact details of domains, making it useful for investigations and threat analysis, but also a potential privacy concern if data is exposed.
 
-Task 4: HTTP(S) – Accessing the web
+## Task 4: HTTP(S) – Accessing the web
 Process:
 	• Used telnet to connect to webserver : telnet MACHINE_IP 80
 	• Retrieve the hidden flag by  accessing the flag.html : 
@@ -64,7 +64,7 @@ Key Concepts:
 Reflection:
 HTTP transmits data in clear text, making it easy for attacker to intercepts with tools like Wireshark. HTTPS adds encryption, this help to securing sensitive information during web communication
 
-Task 5: FTP - Transferring Files
+## Task 5: FTP - Transferring Files
 Process:
 	• Ran ftp MACHINE_IP to connect to remote FTP server
 	• Entered username using USER <username>
@@ -83,7 +83,7 @@ Key Concepts:
 Reflection:
 FTP is designed for file transfer but transmits data in clear text, exposing credentials and files to interception. A more secure alternative is SFTP, which adds encryption to protect data in transit.
 
-Task 6: SMTP – Sending Email
+## Task 6: SMTP – Sending Email
 Process:
 	• Connect to Mail Server using : telnet MACHINE_IP 25
 	• Initiated SMTP Connection : Helo client.thm
@@ -108,7 +108,7 @@ Key Concepts:
 Reflection:
 SMTP enables email delivery between clients and servers, but in its plain form it transmits data unencrypted, exposing messages and credentials to interception. SMTPS is a secure option and essential to protect email confidentiality and integrity.
 
-Task 7: POP3 – Receiving Email
+## Task 7: POP3 – Receiving Email
 Process:
 	• Connected to Mail Server using : telnet MACHINE_IP 110
 	• Started Authentication : 
@@ -136,7 +136,7 @@ Key Concepts:
 Reflection:
 POP3 enables clients to retrieve email from servers, but in its plain form it exposes credentials and messages to interception. Using POP3S (TCP/995) with SSL/TLS is essential to protect email confidentiality and integrity
 
-Task 8: IMAP – Synchronizing Email
+## Task 8: IMAP – Synchronizing Email
 This task reinforced theoretical knowledge through guided questions and quizzes
 
 Key Concepts:
@@ -154,7 +154,6 @@ Key Concepts:
 Reflection:
 	• IMAP enables clients to manage and synchronize emails directly on the server, making it more flexible than POP3. However, in plain form it transmits data unencrypted, so IMAPS (TCP/993) is essential to protect credentials and message confidentiality
 
-📝 Closing Reflection
+## 📝 Closing Reflection
 This walkthrough reinforced my understanding of core TCP/IP protocols and their security implications. By practicing hands‑on commands and analysing risks, I strengthened my ability to detect anomalies, validate records, and recommend secure alternatives. These skills directly support SOC analyst responsibilities such as monitoring traffic, identifying misconfigurations, and defending against protocol‑based attacks.
-<img width="740" height="3560" alt="image" src="https://github.com/user-attachments/assets/03fbf35b-afde-4c22-a9c5-f1f150e7293a" />
 
