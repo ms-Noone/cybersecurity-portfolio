@@ -12,7 +12,7 @@ This room provide a hands-on introduction to the NMAP network scanner. The objec
 
 ## 📝 Task 2: Host Discovery – Who is Online
 **Process:**  
-- Ran `nmap -sn 192.168.0.1/27` to discover the last IP address within the subnet  
+- Ran `nmap -sn 192.168.0.1/27`  to discover the active host in whole subnet
 <img width="758" height="591" alt="list-live-host" src="https://github.com/user-attachments/assets/a56ed65d-18b1-46f3-8844-79326a76bc57" />
 
 **Key Concepts:**  
@@ -25,22 +25,84 @@ This room provide a hands-on introduction to the NMAP network scanner. The objec
 `nmap -sL  192.168.0.1/27`    # List target without actually scanning them  
 
 **Reflection:**  
-Nmap is a powerful tool for quickly enumerating devices on a network. Host discovery is often the first step in network reconnaissance, making it essential for both troubleshooting and security assessments
+Host discovery is often the first step in network reconnaissance. NMAP make it easy to enumerate device on the network, which is essential for both troubleshooting and security assessments.
 
-## Task 3: Port Scanning - Who is Listening
+## 📝Task 3: Port Scanning - Who is Listening
 **Process:**  
-  - Ran `nmap -sT 10.49.175.47` to enumerate active port on target
+  - Ran `nmap -sT 10.49.175.47` to enumerate active port on the target host
 	<img width="631" height="250" alt="port-scanning" src="https://github.com/user-attachments/assets/e2c5f501-91f0-440a-843d-97d9a5a13872" />
 	
 **Key Concepts:** 
 
   - Port scanning can be perform either by using Connect Scan or Syn Scan (Stealth)  
   - Connect Scan (-sT) : NMAP attempts to complete three-way TCP handshake with each target TCP Port. This method is reliable but easier to be detected.  
-  - Syn Scan (-sS) : NMAP send only the initial SYN packet without completing the handshake. This approach is faster and less likely to be logged  
+  - Syn Scan (-sS) : NMAP send only the initial SYN packet without completing the handshake. This approach is faster and stealthier 
 	
 **<ins>Command Examples:</ins>**  
 `nmap -sT 10.49.175.47`       # TCP connect scan - complete three-way handshake  
 `nmap -sS 10.49.175.47`    # TCP Syn - Initiate handshake without completion  
 
 **Reflection:**   
-Port scanning is a critical step in network reconnaissance. By identifying which ports are open and listening, analysts can determine potential entry points into a system and assess its exposure to threats.
+Port scanning is a critical step in network reconnaissance. By identifying which ports are open and listening help analysts to determine potential entry points and assess exposure to threats.
+
+## 📝Task 4: Version Detection – Extract More Information##  
+**Process:**  
+  - Ran `nmap -sS -sV 10.48.153.79` to identify open port and detect the versions of service version 
+	<img width="840" height="191" alt="Version-detection" src="https://github.com/user-attachments/assets/b79acb8b-a9e9-49da-9bed-39e889e89d23" />
+
+**Key Concepts:**  
+  - OS Detection (-O): Attempts to fingerprint the operating system running on the target.
+  - Service Version Detection (-sV): Nmap probes open ports to determine the software and version associated with each service.
+  - Combining port scanning with -sV provide deeper insight into service bound to ports, such as http, ssh daemon and etc
+	
+**<ins>Command Examples:</ins>**  
+`nmap -sS -O 10.49.175.47`       # Attempt OS fingerprinting
+`nmap -sS -sV 10.49.175.47`    # Syn Scan with Service version detection
+
+**Reflection:**  
+Port and service detection is important step in reconnaissance. Understanding target's OS and Service help analyst to assess potential vulnerabilities and plan defensive actions
+
+## 📝Task 5: Timing - How Fast is Fast  
+**Overview:**  
+Timing controls are critical because scan speed can influence detection by Intrusion Detection Systems (IDS) or other security solutions.
+
+**Key Concepts:**  
+  - NMAP at default speed may trigger alerts in IDS or other security solution  
+  - To avoid been detect, NMAP provide timing templates (T0 - T5)  
+    | Timing  | Description |
+	| ------------- | ------------- |
+	| T0 (paranoid) |	Extremely slow, designed to avoid detection |
+	| T1 (sneaky) |	Very slow, minimizes IDS alerts |
+	| T2 (Polite) |	Slows down to reduce network load |
+	| T3 (Normal) |	Default speed, balanced |
+	| T4 (Aggressive) |	Faster scans, may trigger detection |
+	| T5 (Insane) |	Very fast, likely to be detected |
+
+**Reflection:**  
+Timing template allow analyst to adjusts the scan speed based on their objective. Slower scan reduce the chance of detection but take longer, while faster scan provide fast response at the risk of triggering the security defense
+
+## 📝Task 6: Output – Controlling What You See
+**Overview:**  
+Output control is essential for monitoring scan progress, troubleshooting, and saving results for later analysis.
+
+**Key Concepts:**  
+  - Verbosity (-v) :  Provide real-time details about scan progress. With this option, Analyst can observe how NMAP transition through different stages such as ARP Ping scan, DNS resolution & TCP Syn attempt on each open port  
+  - Debugging (-d) : useful for troubleshooting when NMAP not behaving as expected (intended for developer)
+  - Saving Scan Reports: Nmap supports multiple output formats:
+    | Option  | Description |
+	| ------------- | ------------- |
+	| -oN filename |	Normal Output |
+	| -oX filename |	XML Output |
+	| -oG filename |	grep-able output |
+	| -oA filename |	output in all major format (.nmap, .gnamp, .xml) |
+	
+**Reflection:**  
+Using the -v option help analyst to gain real-time visibility of scan process, this is valuable during long or complex scan.
+
+
+## 📝 Closing Reflection##  
+NMAP is one of the most widely used tools in Reconnaissance, exploring its feature help me to understand how analysts can enumerate targets, identify services, and assess potential vulnerabilities. This knowledge strengthens defensive strategies and prepares me for real‑world SOC analyst responsibilities.  
+
+
+
+
