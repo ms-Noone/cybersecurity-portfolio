@@ -13,4 +13,5 @@ This cheat sheet was created to capture useful commands for quick future referen
 | OS Fingerprinting | `nmap -O IP` | OS fingerprinting |
 | Version & OS detction | `nmap -A IP` | OS detection, version detection, and other additions | 
 | Verbosity | `nmap IP -v` | Real-time Scan Progress |
+| ARP Request | `nmap -PR -sn IP` | Indicate to scan only with ARP request |  
 
