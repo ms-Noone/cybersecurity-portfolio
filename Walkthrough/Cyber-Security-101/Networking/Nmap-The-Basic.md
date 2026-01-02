@@ -100,7 +100,7 @@ Output control is essential for monitoring scan progress, troubleshooting, and s
 Using the -v option help analyst to gain real-time visibility of scan process, this is valuable during long or complex scan.
 
 
-## 📝 Closing Reflection##  
+## 📝 Closing Reflection
 NMAP is one of the most widely used tools in Reconnaissance, exploring its feature help me to understand how analysts can enumerate targets, identify services, and assess potential vulnerabilities. This knowledge strengthens defensive strategies and prepares me for real‑world SOC analyst responsibilities.  
 
 
