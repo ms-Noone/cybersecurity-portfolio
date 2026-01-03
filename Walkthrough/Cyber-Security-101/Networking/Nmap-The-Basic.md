@@ -40,7 +40,7 @@ Host discovery is often the first step in network reconnaissance. NMAP make it e
 	
 **<ins>Command Examples:</ins>**  
 `nmap -sT 10.49.175.47`       # TCP connect scan - complete three-way handshake  
-`nmap -sS 10.49.175.47`    # TCP Syn - Initiate handshake without completion  
+`nmap -sS 10.49.175.47`    # TCP Syn(Stealthily - Initiate handshake without completion  
 
 **Reflection:**   
 Port scanning is a critical step in network reconnaissance. By identifying which ports are open and listening help analysts to determine potential entry points and assess exposure to threats.
